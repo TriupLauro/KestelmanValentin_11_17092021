@@ -1,0 +1,29 @@
+.home-header {
+    width: 21rem;
+    height: 7rem;
+    margin: auto;
+    border-radius: 0.625rem;
+    background: url('../assets/header_banner.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.home-header::before {
+    content: '';
+    background-color: black;
+    mix-blend-mode: darken;
+    position: absolute;
+    border-radius: inherit;
+    inset: 0;
+    opacity: 30%;
+}
+
+.home-header-text {
+    font-size: 1.5rem;
+    width: 13.5rem;
+    color: white;
+    padding-left: 1rem;
+    mix-blend-mode: screen;
+}
