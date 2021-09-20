@@ -5,6 +5,7 @@ import KasaHeader from './components/KasaHeader';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
           <Route exact path="/">
               <KasaHeader />
               <Home />
+              <Footer />
           </Route>
       </Router>
   </React.StrictMode>,

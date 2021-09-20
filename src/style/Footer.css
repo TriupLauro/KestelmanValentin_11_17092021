@@ -1,0 +1,16 @@
+.footer {
+    background-color: black;
+}
+
+.footer-copyright {
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 2.875rem 0 3.875rem;
+}
+
+.footer-logo {
+    display: block;
+    margin: auto;
+    padding-top: 3.875rem;
+}

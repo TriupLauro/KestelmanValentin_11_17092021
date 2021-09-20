@@ -24,7 +24,7 @@ class Home extends Component {
     }
 
     render() {
-        if (this.state.loading) return <div>Données en chargement</div>
+        if (this.state.loading) return (<div>Données en chargement</div>)
 
         return (
             <>
