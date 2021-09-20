@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import './style/index.css';
 import KasaHeader from './components/KasaHeader';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./pages/Home";
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
-          <KasaHeader />
-          <Home />
+          <Route exact path="/">
+              <KasaHeader />
+              <Home />
+          </Route>
       </Router>
   </React.StrictMode>,
   document.getElementById('root')

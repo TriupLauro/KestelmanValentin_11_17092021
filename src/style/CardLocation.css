@@ -1,4 +1,5 @@
 .card-location {
+    display: block;
     width: 21rem;
     height: 16rem;
     background-color: #FF6060;
@@ -15,11 +16,19 @@
     border-radius: inherit;
 }
 
+.card-thumbnail {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
 .card-location-text {
-    padding-top: 60%;
     margin: auto;
     color: white;
     mix-blend-mode: screen;
     font-size: 1.125rem;
     width: 18.5rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1.25rem;
 }
