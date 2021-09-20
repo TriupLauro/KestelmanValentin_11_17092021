@@ -31,6 +31,7 @@ class Home extends Component {
                 <HomeHeader/>
                 {this.state.locationsArray?.map(locationItem => (
                     <CardLocation
+                        key={locationItem.id}
                         title={locationItem.title}
                         cover={locationItem.cover}
                     />
