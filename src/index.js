@@ -3,18 +3,24 @@ import ReactDOM from 'react-dom';
 import './style/index.css';
 import KasaHeader from './components/KasaHeader';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import Error from "./pages/Error";
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
-          <Route exact path="/">
-              <KasaHeader />
-              <Home />
-              <Footer />
-          </Route>
+          <KasaHeader />
+          <Switch>
+              <Route exact path="/">
+                  <Home />
+              </Route>
+              <Route path="*">
+                  <Error />
+              </Route>
+          </Switch>
+          <Footer />
       </Router>
   </React.StrictMode>,
   document.getElementById('root')
