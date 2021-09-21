@@ -1,0 +1,18 @@
+.about-banner {
+    width: 21rem;
+    height: 14rem;
+    background-image: url('../assets/banner_about.png');
+    margin: 1.25rem auto;
+    border-radius: 0.625rem;
+    position: relative;
+}
+
+.about-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    border-radius: inherit;
+    mix-blend-mode: darken;
+    opacity: 0.3;
+}

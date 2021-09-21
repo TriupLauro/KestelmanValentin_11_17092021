@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
+import About from "./pages/About";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,9 @@ ReactDOM.render(
           <Switch>
               <Route exact path="/">
                   <Home />
+              </Route>
+              <Route path="/about">
+                  <About />
               </Route>
               <Route path="*">
                   <Error />
