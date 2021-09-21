@@ -34,6 +34,7 @@ class Home extends Component {
                         key={locationItem.id}
                         title={locationItem.title}
                         cover={locationItem.cover}
+                        id={locationItem.id}
                     />
                 ))}
             </>

@@ -17,7 +17,7 @@ class CardLocation extends Component {
 
         return this.props.cover ?
             (
-                <Link to="/" className="card-location">
+                <Link to={`/locationDetails/${this.props.id}`} className="card-location">
                     <img src={this.props.cover} alt="Illustration de la location" className="card-thumbnail"/>
                     <div className="card-location-text">
                         {title}

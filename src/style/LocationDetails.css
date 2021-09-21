@@ -1,0 +1,86 @@
+.details-carousel {
+    width: 21rem;
+    height: 16rem;
+    margin: auto;
+    border-radius: 0.625rem;
+}
+
+.details-carousel-picture {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+.details-title {
+    color: #FF6060;
+    font-size: 1.125rem;
+    font-weight: 500;
+    width: 21rem;
+    margin: 1rem auto 0.375rem;
+}
+
+.details-city {
+    color: #FF6060;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 21rem;
+    margin: auto;
+}
+
+.details-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 21rem;
+    margin: 0.625rem auto 0;
+}
+
+.details-tag-item {
+    background-color: #FF6060;
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 500;
+    width: 5.25rem;
+    height: 1.125rem;
+    line-height: 1.125rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    margin-right: 0.625rem;
+    margin-bottom: 1rem;
+}
+
+.details-rating-container {
+    display: flex;
+    width: 21rem;
+    margin: 0 auto 1rem;
+    align-items: center;
+}
+
+.details-rating {
+    margin-right: auto;
+}
+
+.details-profile-container {
+    display: flex;
+}
+
+.details-profile-name {
+    width: 4rem;
+    text-align: right;
+    font-size: 0.75rem;
+    margin-right: 0.625rem;
+    color: #FF6060;
+    font-weight: 500;
+}
+
+.details-profile-picture {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+
+/* Modifier for the Dropdown component */
+.details-dropdown-container .dropdown-content {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+}
