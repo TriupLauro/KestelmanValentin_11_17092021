@@ -38,12 +38,21 @@ class LocationDetails extends Component {
             })
     }
 
+    changeIndex = (newValue) => {
+        this.setState({pictureIndex : newValue})
+    }
+
     render() {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
 
         if (this.state.isLoading) return <div>Données en chargement</div>
 
-        const currentPicture = this.state.details?.pictures[this.state.pictureIndex]
+        const picturesArray = this.state.details?.pictures
+        const needArrows = picturesArray.length > 1
+        const currentPicture = picturesArray[this.state.pictureIndex]
+        const previousIndex = this.state.pictureIndex === 0 ? picturesArray.length - 1 : this.state.pictureIndex - 1
+        const nextIndex = this.state.pictureIndex === picturesArray.length - 1 ? 0 : this.state.pictureIndex + 1
+
         const rating = parseInt(this.state.details?.rating)
         const stars = []
         for(let i = 1; i<=5; i++) {
@@ -54,7 +63,9 @@ class LocationDetails extends Component {
             return (
                 <>
                     <div className="details-carousel">
+                        {needArrows && <button className="details-carousel-previous-button" onClick={() => this.changeIndex(previousIndex)}> </button> }
                         <img src={currentPicture} alt={this.state.details.title} className="details-carousel-picture" />
+                        {needArrows && <button className="details-carousel-next-button" onClick={() => this.changeIndex(nextIndex)}> </button> }
                     </div>
                     <h1 className="details-title">{this.state.details.title}</h1>
                     <h2 className="details-city">{this.state.details.location}</h2>
@@ -79,7 +90,7 @@ class LocationDetails extends Component {
 
                     <div className="details-dropdown-container">
                         <Dropdown title="Description" description={this.state.details.description} />
-                        <Dropdown title="Équipements" description={this.state.details.equipments?.map((item,index) => (<span key={index}>{item}<br/></span>))} />
+                        <Dropdown title="Équipements" description={this.state.details.equipments?.map((item,index) => (<span key={`${item}-${index}`}>{item}<br/></span>))} />
                     </div>
                 </>
             )
