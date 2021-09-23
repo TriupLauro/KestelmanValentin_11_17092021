@@ -13,6 +13,7 @@
   text-decoration: none;
   color : #FF6060;
   margin-right: 0.625rem;
+  text-transform: uppercase;
 }
 
 .header-link:hover {
@@ -25,4 +26,27 @@
 
 .header-nav {
   margin-right: 1rem;
+}
+
+@media screen and (min-width: 700px){
+  .header-container {
+    width: 85vw;
+    margin: 2.5rem auto;
+  }
+
+  .header-logo {
+    width: 13.125rem;
+    height: 4.25rem;
+    margin: 0;
+  }
+
+  .header-nav {
+    margin-right: 0;
+  }
+
+  .header-link {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-left: 3.75rem;
+  }
 }

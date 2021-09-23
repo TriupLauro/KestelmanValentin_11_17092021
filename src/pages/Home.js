@@ -29,14 +29,16 @@ class Home extends Component {
         return (
             <>
                 <HomeHeader/>
-                {this.state.locationsArray?.map(locationItem => (
-                    <CardLocation
-                        key={locationItem.id}
-                        title={locationItem.title}
-                        cover={locationItem.cover}
-                        id={locationItem.id}
-                    />
-                ))}
+                <div className="home-card-container">
+                    {this.state.locationsArray?.map(locationItem => (
+                        <CardLocation
+                            key={locationItem.id}
+                            title={locationItem.title}
+                            cover={locationItem.cover}
+                            id={locationItem.id}
+                        />
+                    ))}
+                </div>
             </>
         )
     }

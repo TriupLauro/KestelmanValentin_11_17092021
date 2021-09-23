@@ -8,7 +8,7 @@ class KasaHeader extends Component {
         return (
             <header className="header-container">
                 <img className="header-logo" src={Logo} alt="Kasa" />
-                <nav className="header-nav"><Link to="/" className="header-link">ACCUEIL</Link><Link to="/about" className="header-link">A PROPOS</Link></nav>
+                <nav className="header-nav"><Link to="/" className="header-link">Accueil</Link><Link to="/about" className="header-link">A Propos</Link></nav>
             </header>
         )
     }
