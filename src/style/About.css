@@ -16,3 +16,11 @@
     mix-blend-mode: darken;
     opacity: 0.3;
 }
+
+@media screen and (min-width: 700px) {
+    .about-banner {
+        width: 85vw;
+        background-image: url('../assets/banner_about_desktop.png');
+        background-size: cover;
+    }
+}

@@ -21,3 +21,30 @@
     font-size: 0.875rem;
     margin: 8.375rem 0 14.75rem;
 }
+
+@media screen and (min-width: 700px) {
+    .error-code {
+        font-size: 12rem;
+    }
+
+    .error-message {
+        width: auto;
+        font-size : 1.625rem;
+        margin: 4.125rem auto 0;
+    }
+
+    .error-link {
+        margin: 11.375rem auto 10rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .error-code {
+        font-size: 18rem;
+    }
+
+    .error-message {
+        font-size: 2.25rem;
+    }
+}

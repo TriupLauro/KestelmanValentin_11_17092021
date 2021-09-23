@@ -24,9 +24,7 @@ class Dropdown extends Component {
                 :
                 <div className="dropdown-container">
                     <button className="dropdown-button" onClick={this.toggleDropdown}>{this.props.title}
-                        <div className="dropdown-button-chevron"
-                             style={{transform : 'rotate(45deg)',
-                             margin: '0 0.625rem 0.375rem auto'}}> </div>
+                        <div className="dropdown-button-chevron dropdown-button-chevron--face-down"> </div>
                     </button>
                 </div>
         )
