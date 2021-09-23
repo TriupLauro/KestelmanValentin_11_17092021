@@ -19,7 +19,7 @@
 
 @media screen and (min-width: 700px) {
     .about-banner {
-        width: 85vw;
+        width: 90vw;
         background-image: url('../assets/banner_about_desktop.png');
         background-size: cover;
     }
