@@ -6,31 +6,36 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Error from "./pages/Error";
+import ErrorPage from "./pages/Error";
 import About from "./pages/About";
 import LocationDetails from "./pages/LocationDetails";
+import {QueryClient, QueryClientProvider} from "react-query";
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
-          <KasaHeader />
-          <Switch>
-              <Route exact path="/">
-                  <Home />
-              </Route>
-              <Route path="/about">
-                  <About />
-              </Route>
-              <Route
-                  path="/locationDetails/:idQuery"
-                  render={props => <LocationDetails {...props} />}
-              />
-              <Route path="*">
-                  <Error />
-              </Route>
-          </Switch>
-          <Footer />
-      </Router>
+      <QueryClientProvider client={queryClient}>
+          <Router>
+              <KasaHeader />
+              <Switch>
+                  <Route exact path="/">
+                      <Home />
+                  </Route>
+                  <Route path="/about">
+                      <About />
+                  </Route>
+                  <Route
+                      path="/locationDetails/:idQuery"
+                      render={props => <LocationDetails {...props} />}
+                  />
+                  <Route path="*">
+                      <ErrorPage />
+                  </Route>
+              </Switch>
+              <Footer />
+          </Router>
+      </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

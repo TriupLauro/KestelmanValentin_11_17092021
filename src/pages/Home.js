@@ -1,47 +1,29 @@
-import {Component} from "react";
 import HomeHeader from "../components/HomeHeader";
 import CardLocation from "../components/CardLocation";
+import {useLocations} from "../utils/customHooks";
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            locationsArray : {},
-            loading: true
-        }
-    }
+function Home()  {
 
-    componentDidMount() {
-        fetch('http://localhost:8000/kasaData')
-            .then(response => {
-                if (!response.ok) throw new Error(response.statusText)
-                return response.json()
-            })
-            .then(data => {
-                this.setState({locationsArray : data})
-                this.setState({loading : false})
-            })
-    }
+    const locations = useLocations()
 
-    render() {
-        if (this.state.loading) return (<div>Données en chargement</div>)
+    if (locations.isLoading) return (<div>Données en chargement</div>)
 
-        return (
-            <>
-                <HomeHeader/>
-                <div className="home-card-container">
-                    {this.state.locationsArray?.map(locationItem => (
-                        <CardLocation
-                            key={locationItem.id}
-                            title={locationItem.title}
-                            cover={locationItem.cover}
-                            id={locationItem.id}
-                        />
-                    ))}
-                </div>
-            </>
-        )
-    }
+    return (
+        <>
+            <HomeHeader/>
+            <div className="home-card-container">
+                {locations.data?.map(locationItem => (
+                    <CardLocation
+                        key={locationItem.id}
+                        title={locationItem.title}
+                        cover={locationItem.cover}
+                        id={locationItem.id}
+                    />
+                ))}
+            </div>
+        </>
+    )
+
 }
 
 export default Home
