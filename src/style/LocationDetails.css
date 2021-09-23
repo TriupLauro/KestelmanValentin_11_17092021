@@ -116,3 +116,108 @@
     font-size: 0.75rem;
     padding: 0.75rem;
 }
+
+@media screen and (min-width: 700px) {
+    .details-carousel {
+        width: 90vw;
+        height: 26rem;
+    }
+
+    .details-carousel-previous-button {
+        width: 2rem;
+        height: 2rem;
+        left: 1.5rem;
+        border-bottom-width: 0.4rem;
+        border-right-width: 0.4rem;
+    }
+
+    .details-carousel-next-button {
+        width: 2rem;
+        height: 2rem;
+        right: 1.5rem;
+        border-bottom-width: 0.4rem;
+        border-right-width: 0.4rem;
+    }
+
+    .details-wrapper {
+        display: flex;
+        width: 90vw;
+        margin: 1.875rem auto;
+        justify-content: stretch;
+    }
+
+    .details-title {
+        font-size: 2.25rem;
+        width: auto;
+        margin: 0;
+    }
+
+    .details-city {
+        font-size: 1.125rem;
+        margin: 0;
+    }
+
+    .details-tag-container {
+        width: auto;
+        margin-top: 1.25rem;
+    }
+
+    .details-tag-item {
+        width: 7.25rem;
+        height: 1.625rem;
+        line-height: 1.625rem;
+        font-size: 0.875rem;
+        border-radius: 0.625rem;
+        margin-bottom: 0;
+    }
+
+    .details-rating-container {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        margin: 0 0 0 auto;
+        width: auto;
+    }
+
+    .details-profile-container {
+        align-items: center;
+    }
+
+    .details-profile-name {
+        font-size: 1.125rem;
+        width: 6.25rem;
+    }
+
+    .details-profile-picture {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .details-rating {
+        margin-right: 0;
+        order: 2;
+    }
+
+    .details-rating img {
+        width: 1.875rem;
+    }
+
+    /* Modifiers for the Dropdown component */
+    .details-dropdown-container {
+        display: flex;
+    }
+
+    .details-dropdown-container .dropdown-container {
+        width: 40vw;
+        margin : 0 auto 1rem;
+    }
+
+    .details-dropdown-container .dropdown-button {
+        font-size: 1.125rem;
+    }
+
+    .details-dropdown-container .dropdown-content {
+        font-size: 1.125rem;
+        padding: 1.875rem;
+    }
+}

@@ -67,25 +67,32 @@ class LocationDetails extends Component {
                         <img src={currentPicture} alt={this.state.details.title} className="details-carousel-picture" />
                         {needArrows && <button className="details-carousel-next-button" onClick={() => this.changeIndex(nextIndex)}> </button> }
                     </div>
-                    <h1 className="details-title">{this.state.details.title}</h1>
-                    <h2 className="details-city">{this.state.details.location}</h2>
-                    <div className="details-tag-container">
-                        {this.state.details.tags?.map(tag => (<div key={tag} className="details-tag-item">{tag}</div> ))}
-                    </div>
 
-                    <div className="details-rating-container">
-                        <div className="details-rating">
-                            {stars.map((level,index) => (level ?
-                                <img key={`level-${index}`} src={FullStar} alt="étoile remplie"/> :
-                                <img key={`level-${index}`} src={EmptyStar} alt="étoile vide"/>))
-                            }
+                    <div className="details-wrapper">
+
+                        <div className="details-title-container">
+                            <h1 className="details-title">{this.state.details.title}</h1>
+                            <h2 className="details-city">{this.state.details.location}</h2>
+                            <div className="details-tag-container">
+                                {this.state.details.tags?.map(tag => (<div key={tag} className="details-tag-item">{tag}</div> ))}
+                            </div>
                         </div>
-                        <div className="details-profile-container">
-                            <div className="details-profile-name">{this.state.details.host.name}</div>
-                            <img className="details-profile-picture"
-                                src={this.state.details.host.picture} alt={this.state.details.host.name}
-                            />
+
+                        <div className="details-rating-container">
+                            <div className="details-rating">
+                                {stars.map((level,index) => (level ?
+                                    <img key={`level-${index}`} src={FullStar} alt="étoile remplie"/> :
+                                    <img key={`level-${index}`} src={EmptyStar} alt="étoile vide"/>))
+                                }
+                            </div>
+                            <div className="details-profile-container">
+                                <div className="details-profile-name">{this.state.details.host.name}</div>
+                                <img className="details-profile-picture"
+                                    src={this.state.details.host.picture} alt={this.state.details.host.name}
+                                />
+                            </div>
                         </div>
+
                     </div>
 
                     <div className="details-dropdown-container">
