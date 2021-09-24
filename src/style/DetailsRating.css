@@ -1,0 +1,14 @@
+.details-rating {
+    margin-right: auto;
+}
+
+@media screen and (min-width: 700px) {
+    .details-rating {
+        margin-right: 0;
+        order: 2;
+    }
+
+    .details-rating img {
+        width: 1.875rem;
+    }
+}

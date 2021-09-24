@@ -25,10 +25,9 @@ ReactDOM.render(
                   <Route path="/about">
                       <About />
                   </Route>
-                  <Route
-                      path="/locationDetails/:idQuery"
-                      render={props => <LocationDetails {...props} />}
-                  />
+                  <Route path="/locationDetails/:idQuery">
+                       <LocationDetails />
+                  </Route>
                   <Route path="*">
                       <ErrorPage />
                   </Route>
