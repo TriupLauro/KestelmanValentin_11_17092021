@@ -12,6 +12,8 @@ const LocationDetails = () => {
 
     if (isLoading) return <div>Données en chargement</div>
 
+    const [firstName, lastName] = data.host.name.split(" ")
+
     return (
         <>
             <DetailsCarousel pictures={data.pictures} title={data.title} />
@@ -29,7 +31,7 @@ const LocationDetails = () => {
                 <div className="details-rating-container">
                     <DetailsRating rating={data.rating} />
                     <div className="details-profile-container">
-                        <div className="details-profile-name">{data.host.name}</div>
+                        <div className="details-profile-name">{firstName}<br/>{lastName}</div>
                         <img className="details-profile-picture"
                              src={data.host.picture} alt={data.host.name}
                         />

@@ -20,7 +20,8 @@
   text-decoration: underline;
 }
 
-.header-link:active {
+/* Active means the app display the linked page*/
+.active {
   text-decoration: underline;
 }
 
