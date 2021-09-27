@@ -20,7 +20,7 @@
   text-decoration: underline;
 }
 
-.header-link:active {
+.header-link.active {
   text-decoration: underline;
 }
 

@@ -59,6 +59,8 @@ class LocationDetails extends Component {
             i <= rating ? stars.push(true) : stars.push(false)
         }
 
+        const [firstName, lastName] = this.state.details.host.name.split(' ')
+
         if (this.state.details) {
             return (
                 <>
@@ -86,7 +88,7 @@ class LocationDetails extends Component {
                                 }
                             </div>
                             <div className="details-profile-container">
-                                <div className="details-profile-name">{this.state.details.host.name}</div>
+                                <div className="details-profile-name">{firstName}<br/>{lastName}</div>
                                 <img className="details-profile-picture"
                                     src={this.state.details.host.picture} alt={this.state.details.host.name}
                                 />
