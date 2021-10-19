@@ -1,3 +1,8 @@
+/* Push the footer to the bottom without scrolling*/
+.details-content {
+    min-height: calc(100vh - 5rem - 14rem);
+}
+
 .details-carousel {
     width: 21rem;
     height: 16rem;
@@ -118,6 +123,11 @@
 }
 
 @media screen and (min-width: 700px) {
+    /* Push the footer to the bottom without scrolling*/
+    .details-content {
+        min-height: calc(100vh - 9.25rem - 11.8rem);
+    }
+
     .details-carousel {
         width: 90vw;
         height: 26rem;

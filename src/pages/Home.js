@@ -1,6 +1,7 @@
 import {Component} from "react";
 import HomeHeader from "../components/HomeHeader";
 import HouseCard from "../components/HouseCard";
+import '../style/Home.css'
 
 class Home extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class Home extends Component {
         if (this.state.loading) return (<div>Données en chargement</div>)
 
         return (
-            <>
+            <div className="home-wrapper">
                 <HomeHeader/>
                 <div className="home-card-container">
                     {this.state.housesArray?.map(houseItem => (
@@ -39,7 +40,7 @@ class Home extends Component {
                         />
                     ))}
                 </div>
-            </>
+            </div>
         )
     }
 }
