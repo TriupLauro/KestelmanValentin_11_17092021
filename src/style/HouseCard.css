@@ -1,4 +1,4 @@
-.card-location {
+.card-house {
     display: block;
     width: 21rem;
     height: 16rem;
@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.card-location::before {
+.card-house::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -23,7 +23,7 @@
     object-fit: cover;
 }
 
-.card-location-text {
+.card-house-text {
     margin: auto;
     color: white;
     mix-blend-mode: screen;
@@ -35,14 +35,14 @@
 }
 
 @media screen and (min-width: 700px) {
-    .card-location {
+    .card-house {
         width: 21.25rem;
         height: 21.25rem;
     }
 }
 
 @media screen and (min-width: 1000px) {
-    .card-location {
+    .card-house {
         margin-bottom: 2.5rem;
     }
 }

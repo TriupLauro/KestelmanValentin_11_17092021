@@ -7,17 +7,17 @@ class HouseCard extends Component {
     render() {
         return this.props.cover ?
             (
-                <Link to={`/locationDetails/${this.props.id}`} className="card-location">
+                <Link to={`/houseDetails/${this.props.id}`} className="card-house">
                     <img src={this.props.cover} alt="Illustration de la location" className="card-thumbnail"/>
-                    <div className="card-location-text">
+                    <div className="card-house-text">
                         {this.props.title}
                     </div>
                 </Link>
             )
             :
             (
-            <Link to={`/locationDetails/${this.props.id}`} className="card-location">
-                <div className="card-location-text">
+            <Link to={`/houseDetails/${this.props.id}`} className="card-house">
+                <div className="card-house-text">
                     {this.props.title}
                 </div>
             </Link>

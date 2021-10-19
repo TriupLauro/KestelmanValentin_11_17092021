@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dataJSON" : "cd src && cd database && json-server --read-only --port 8000 db.json"
+    "dataJSON": "cd src && cd database && json-server --read-only --port 8000 db.json"
   },
   "eslintConfig": {
     "extends": [

@@ -22,7 +22,7 @@ ReactDOM.render(
                   <About />
               </Route>
               <Route
-                  path="/locationDetails/:idQuery"
+                  path="/houseDetails/:idQuery"
                   render={props => <HouseDetails {...props} />}
               />
               <Route path="*">
