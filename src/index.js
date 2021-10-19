@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
 import About from "./pages/About";
-import LocationDetails from "./pages/LocationDetails";
+import HouseDetails from "./pages/HouseDetails";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +23,7 @@ ReactDOM.render(
               </Route>
               <Route
                   path="/locationDetails/:idQuery"
-                  render={props => <LocationDetails {...props} />}
+                  render={props => <HouseDetails {...props} />}
               />
               <Route path="*">
                   <Error />

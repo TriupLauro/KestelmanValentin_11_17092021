@@ -1,11 +1,11 @@
 import {Component} from "react";
-import "../style/LocationDetails.css"
+import "../style/HouseDetails.css"
 import FullStar from "../assets/star_full.svg"
 import EmptyStar from "../assets/star_empty.svg"
 import Dropdown from "../components/Dropdown";
 import {Redirect} from "react-router-dom";
 
-class LocationDetails extends Component {
+class HouseDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -107,4 +107,4 @@ class LocationDetails extends Component {
     }
 }
 
-export default LocationDetails
+export default HouseDetails

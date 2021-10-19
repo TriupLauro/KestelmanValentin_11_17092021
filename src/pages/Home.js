@@ -1,12 +1,12 @@
 import {Component} from "react";
 import HomeHeader from "../components/HomeHeader";
-import CardLocation from "../components/CardLocation";
+import HouseCard from "../components/HouseCard";
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            locationsArray : {},
+            housesArray : [],
             loading: true
         }
     }
@@ -18,7 +18,7 @@ class Home extends Component {
                 return response.json()
             })
             .then(data => {
-                this.setState({locationsArray : data})
+                this.setState({housesArray : data})
                 this.setState({loading : false})
             })
     }
@@ -30,12 +30,12 @@ class Home extends Component {
             <>
                 <HomeHeader/>
                 <div className="home-card-container">
-                    {this.state.locationsArray?.map(locationItem => (
-                        <CardLocation
-                            key={locationItem.id}
-                            title={locationItem.title}
-                            cover={locationItem.cover}
-                            id={locationItem.id}
+                    {this.state.housesArray?.map(houseItem => (
+                        <HouseCard
+                            key={houseItem.id}
+                            title={houseItem.title}
+                            cover={houseItem.cover}
+                            id={houseItem.id}
                         />
                     ))}
                 </div>
