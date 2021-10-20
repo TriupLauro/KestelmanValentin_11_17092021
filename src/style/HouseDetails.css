@@ -1,5 +1,5 @@
 /* Push the footer to the bottom without scrolling*/
-.details-content {
+.main-content {
     min-height: calc(100vh - 5rem - 14rem);
 }
 
@@ -124,7 +124,7 @@
 
 @media screen and (min-width: 700px) {
     /* Push the footer to the bottom without scrolling*/
-    .details-content {
+    .main-content {
         min-height: calc(100vh - 9.25rem - 11.8rem);
     }
 

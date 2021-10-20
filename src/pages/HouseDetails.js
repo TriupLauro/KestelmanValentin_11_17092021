@@ -45,7 +45,7 @@ class HouseDetails extends Component {
     render() {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
 
-        if (this.state.isLoading) return <div className="details-content">Données en chargement</div>
+        if (this.state.isLoading) return <div className="main-content">Données en chargement</div>
 
         const picturesArray = this.state.details?.pictures
         const needArrows = picturesArray.length > 1
@@ -63,7 +63,7 @@ class HouseDetails extends Component {
 
         if (this.state.details) {
             return (
-                <div className="details-content">
+                <div className="main-content">
                     <div className="details-carousel">
                         {needArrows && <button className="details-carousel-previous-button" onClick={() => this.changeIndex(previousIndex)}> </button> }
                         <img src={currentPicture} alt={this.state.details.title} className="details-carousel-picture" />
