@@ -16,12 +16,12 @@ class HouseCard extends Component {
             )
             :
             (
-            <Link to={`/houseDetails/${this.props.id}`} className="card-house">
-                <div className="card-house-text">
-                    {this.props.title}
-                </div>
-            </Link>
-        )
+                <Link to={`/houseDetails/${this.props.id}`} className="card-house">
+                    <div className="card-house-text">
+                        {this.props.title}
+                    </div>
+                </Link>
+            )
     }
 }
 

@@ -1,3 +1,15 @@
+# Front-end development project 11
+
+First you need to install dependencies
+
+`yarn install`
+
+In order to run this project, first run the json-server, then run the project itself 
+
+- `yarn run dataJSON`
+- `yarn run start`
+
+-----------
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

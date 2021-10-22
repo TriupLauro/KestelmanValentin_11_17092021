@@ -5,10 +5,10 @@ import "../style/Footer.css"
 class Footer extends Component {
     render() {
         return (
-            <div className="footer">
+            <footer className="footer">
                 <img src={WhiteLogo} alt="Kasa" className="footer-logo"/>
                 <div className="footer-copyright">© 2020 Kasa. All rights reserved</div>
-            </div>
+            </footer>
         )
     }
 }
