@@ -4,6 +4,7 @@ import FullStar from "../assets/star_full.svg"
 import EmptyStar from "../assets/star_empty.svg"
 import Dropdown from "../components/Dropdown";
 import {Redirect} from "react-router-dom";
+import LayoutHeaderFooter from "../layouts/LayoutHeaderFooter";
 
 class HouseDetails extends Component {
     constructor(props) {
@@ -45,7 +46,11 @@ class HouseDetails extends Component {
     render() {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
 
-        if (this.state.isLoading) return <div className="main-content">Données en chargement</div>
+        if (this.state.isLoading) return (
+            <LayoutHeaderFooter>
+                <div className="main-content">Données en chargement</div>
+            </LayoutHeaderFooter>
+        )
 
         const picturesArray = this.state.details?.pictures
         const needArrows = picturesArray.length > 1
@@ -63,45 +68,47 @@ class HouseDetails extends Component {
 
         if (this.state.details) {
             return (
-                <div className="main-content">
-                    <div className="details-carousel">
-                        {needArrows && <button className="details-carousel-previous-button" onClick={() => this.changeIndex(previousIndex)}> </button> }
-                        <img src={currentPicture} alt={this.state.details.title} className="details-carousel-picture" />
-                        {needArrows && <button className="details-carousel-next-button" onClick={() => this.changeIndex(nextIndex)}> </button> }
-                    </div>
-
-                    <div className="details-wrapper">
-
-                        <div className="details-title-container">
-                            <h1 className="details-title">{this.state.details.title}</h1>
-                            <h2 className="details-city">{this.state.details.location}</h2>
-                            <div className="details-tag-container">
-                                {this.state.details.tags?.map(tag => (<div key={tag} className="details-tag-item">{tag}</div> ))}
-                            </div>
+                <LayoutHeaderFooter>
+                    <div className="main-content">
+                        <div className="details-carousel">
+                            {needArrows && <button className="details-carousel-previous-button" onClick={() => this.changeIndex(previousIndex)}> </button> }
+                            <img src={currentPicture} alt={this.state.details.title} className="details-carousel-picture" />
+                            {needArrows && <button className="details-carousel-next-button" onClick={() => this.changeIndex(nextIndex)}> </button> }
                         </div>
 
-                        <div className="details-rating-container">
-                            <div className="details-rating">
-                                {stars.map((level,index) => (level ?
-                                    <img key={`level-${index}`} src={FullStar} alt="étoile remplie"/> :
-                                    <img key={`level-${index}`} src={EmptyStar} alt="étoile vide"/>))
-                                }
+                        <div className="details-wrapper">
+
+                            <div className="details-title-container">
+                                <h1 className="details-title">{this.state.details.title}</h1>
+                                <h2 className="details-city">{this.state.details.location}</h2>
+                                <div className="details-tag-container">
+                                    {this.state.details.tags?.map(tag => (<div key={tag} className="details-tag-item">{tag}</div> ))}
+                                </div>
                             </div>
-                            <div className="details-profile-container">
-                                <div className="details-profile-name">{firstName}<br/>{lastName}</div>
-                                <img className="details-profile-picture"
-                                    src={this.state.details.host.picture} alt={this.state.details.host.name}
-                                />
+
+                            <div className="details-rating-container">
+                                <div className="details-rating">
+                                    {stars.map((level,index) => (level ?
+                                        <img key={`level-${index}`} src={FullStar} alt="étoile remplie"/> :
+                                        <img key={`level-${index}`} src={EmptyStar} alt="étoile vide"/>))
+                                    }
+                                </div>
+                                <div className="details-profile-container">
+                                    <div className="details-profile-name">{firstName}<br/>{lastName}</div>
+                                    <img className="details-profile-picture"
+                                         src={this.state.details.host.picture} alt={this.state.details.host.name}
+                                    />
+                                </div>
                             </div>
+
                         </div>
 
+                        <div className="details-dropdown-container">
+                            <Dropdown title="Description" description={this.state.details.description} />
+                            <Dropdown title="Équipements" description={this.state.details.equipments?.map((item,index) => (<span key={`${item}-${index}`}>{item}<br/></span>))} />
+                        </div>
                     </div>
-
-                    <div className="details-dropdown-container">
-                        <Dropdown title="Description" description={this.state.details.description} />
-                        <Dropdown title="Équipements" description={this.state.details.equipments?.map((item,index) => (<span key={`${item}-${index}`}>{item}<br/></span>))} />
-                    </div>
-                </div>
+                </LayoutHeaderFooter>
             )
         }
     }

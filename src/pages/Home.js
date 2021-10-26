@@ -2,6 +2,7 @@ import {Component} from "react";
 import HomeHeader from "../components/HomeHeader";
 import HouseCard from "../components/HouseCard";
 import '../style/Home.css'
+import LayoutHeaderFooter from "../layouts/LayoutHeaderFooter";
 
 class Home extends Component {
     constructor(props) {
@@ -25,22 +26,28 @@ class Home extends Component {
     }
 
     render() {
-        if (this.state.loading) return (<div>Données en chargement</div>)
+        if (this.state.loading) return (
+            <LayoutHeaderFooter>
+                <div>Données en chargement</div>
+            </LayoutHeaderFooter>
+        )
 
         return (
-            <div className="home-wrapper">
-                <HomeHeader/>
-                <div className="home-card-container">
-                    {this.state.housesArray?.map(houseItem => (
-                        <HouseCard
-                            key={houseItem.id}
-                            title={houseItem.title}
-                            cover={houseItem.cover}
-                            id={houseItem.id}
-                        />
-                    ))}
+            <LayoutHeaderFooter>
+                <div className="home-wrapper">
+                    <HomeHeader/>
+                    <div className="home-card-container">
+                        {this.state.housesArray?.map(houseItem => (
+                            <HouseCard
+                                key={houseItem.id}
+                                title={houseItem.title}
+                                cover={houseItem.cover}
+                                id={houseItem.id}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </LayoutHeaderFooter>
         )
     }
 }
